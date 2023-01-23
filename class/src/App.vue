@@ -1,20 +1,27 @@
 <template>
-  <div>
-    <h1>{{ message }}</h1>
-        <HelloWorld />
-    </div>
+        <h1 @click="increase">
+            {{ count }}
+        </h1>
 </template>
 
 <script>
-import HelloWorld from '~/components/HelloWorld'
-export default {
-    components: {
-        HelloWorld
-    },
-    data() {
-        return {
-            message: 'Hello Vue!!'
+    export default {
+        data() {
+            return {
+                count: 0
+            }
+        },
+        methods: {
+            increase() {
+                this.count += 1
+            }
         }
-    },
-}
+    }
 </script>
+
+<style>
+    h1 {
+        color: royalblue;
+        font-size: 50px;
+    }
+</style>
