@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const {VueLoaderPlugin} = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
     resolve: {
@@ -35,6 +35,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 use: 'babel-loader'
             },{
                 test: /\.(png|jpe?g|gif|webp)$/,
@@ -54,6 +55,8 @@ module.exports = {
         new VueLoaderPlugin()
     ],
     devServer: {
-        host: 'localhost'
+        host: 'localhost',
+        port: 3000,
+        hot: true
     }
 }
