@@ -1,13 +1,26 @@
 <template>
-    <Fruits />
+    <h1>{{ reversedMessage }}</h1>
+    <h1>{{ reversedMessage }}</h1>
+    <h1>{{ reversedMessage }}</h1>
+    <h1>{{ reversedMessage }}</h1>
 </template>
 
 <script>
-import Fruits from './components/Fruits.vue';
-
 export default {
-    components: {
-        Fruits
+    data() {
+        return {
+            msg: 'Hello'
+        }
+    },
+    computed: {
+        reversedMessage() {
+            return this.msg.split('').reverse().join('')
+        }
+    },
+    methods: {
+        reverseMessage() {
+            return this.msg.split('').reverse().join('')
+        }
     }
 }
 </script>
