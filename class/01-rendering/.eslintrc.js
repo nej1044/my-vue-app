@@ -4,28 +4,27 @@ module.exports = {
         node: true
     },
     extends: [
-        'eslint:recommended',
+        // 'plugin:vue/vue3-essential',
         'plugin:vue/vue3-strongly-recommended',
-        'prettier'
+        // 'plugin:vue/vue3-recommended',
+        'eslint:recommended'
     ],
     parserOptions: {
-        parser: ['@babel/eslint-parser', 'babel-eslint', 'eslint-plugin-vue'],
-        requireConfigFile: false,
+        parser: '@babel/eslint-parser'
     },
     rules: {
-        'vue/html-closing-bracket-newline':['error', {
+        'vue/html-closing-bracket-newline': ['error',{
             'singleline': 'never',
-            'multiline': 'always'
+            'multiline': 'never'
         }],
         'vue/html-self-closing': ['error', {
             'html': {
                 'void': 'always',
                 'normal': 'never',
-                'component': 'always'
+                'component': 'always',
             },
             'svg': 'always',
             'math': 'always'
-        }],
-        'indent': 'off'
+        }]
     }
 }
