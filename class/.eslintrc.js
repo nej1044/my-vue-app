@@ -9,7 +9,7 @@ module.exports = {
         'prettier'
     ],
     parserOptions: {
-        parser: ['@babel/eslint-parser'],
+        parser: ['@babel/eslint-parser', 'babel-eslint', 'eslint-plugin-vue'],
         requireConfigFile: false,
     },
     rules: {
