@@ -1,7 +1,12 @@
 <template>
-  <button @click="handlerA(), handlerB()">
-    Click me!
-  </button>
+  <div
+    class="parent"
+    @click="handlerA">
+    <div
+      class="child"
+      @click.stop="handlerB">
+    </div>
+  </div>
 </template>
 
 <script>
@@ -10,13 +15,25 @@ export default {
         handlerA(){
             console.log('A')
         },
-        handlerB(){
+        handlerB() {
             console.log('B')
         }
     }
 }
 </script> 
 
-<style>
+<style scoped lang="scss">
+.parent {
+    width: 200px;
+    height: 100px;
+    background-color: royalblue;
+    margin: 10px;
+    padding: 10px;
+    .child {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+    }
+}
 
 </style>
