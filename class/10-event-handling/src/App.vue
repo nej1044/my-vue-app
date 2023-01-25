@@ -1,39 +1,16 @@
 <template>
-  <div
-    class="parent"
-    @click="handlerA">
-    <div
-      class="child"
-      @click.stop="handlerB">
-    </div>
-  </div>
+  <input
+    type="text"
+    @keydown.enter="handler" />
 </template>
 
 <script>
 export default {
     methods: {
-        handlerA(){
-            console.log('A')
-        },
-        handlerB() {
-            console.log('B')
+        handler(event){
+            console.log('Enter!!')
         }
     }
 }
 </script> 
 
-<style scoped lang="scss">
-.parent {
-    width: 200px;
-    height: 100px;
-    background-color: royalblue;
-    margin: 10px;
-    padding: 10px;
-    .child {
-        width: 100px;
-        height: 100px;
-        background-color: orange;
-    }
-}
-
-</style>
