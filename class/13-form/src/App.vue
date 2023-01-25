@@ -2,8 +2,7 @@
   <h1>{{ msg }}</h1>
   <input
     type="text"
-    :value="msg"
-    @input="msg=$event.target.value" />
+    v-model.trim="msg" />
   <h1>{{ checked }}</h1>
   <input
     type="checkbox"
@@ -16,6 +15,11 @@ export default {
         return {
             msg: 'Hello world!',
             checked: false
+        }
+    },
+    watch: {
+        msg() {
+            console.log(this.msg.trim())
         }
     }
 }
