@@ -7,7 +7,7 @@
 <script>
 export default {
     methods: {
-        handler(event){
+        handler(){
             console.log('Enter!!')
         }
     }
