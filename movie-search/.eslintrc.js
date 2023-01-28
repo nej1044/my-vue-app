@@ -7,7 +7,8 @@ module.exports = {
         // 'plugin:vue/vue3-essential',
         'plugin:vue/vue3-strongly-recommended',
         // 'plugin:vue/vue3-recommended',
-        'eslint:recommended'
+        'eslint:recommended',
+        'plugin:prettier/recommended'
     ],
     parserOptions: {
         parser: '@babel/eslint-parser'
@@ -27,6 +28,19 @@ module.exports = {
             'math': 'always'
         }],
         'vue/multi-word-component-names': 'off',
-        'vue/no-reserved-component-names': 'off'
+        'vue/no-reserved-component-names': 'off',
+        'prettier/prettier': [
+			'error',
+			{
+				singleQuote: true,
+				semi: true,
+				useTabs: true,
+				tabWidth: 2,
+				trailingComma: 'all',
+				printWidth: 80,
+				bracketSpacing: true,
+				arrowParens: 'avoid',
+			},
+		],
     }
 }
