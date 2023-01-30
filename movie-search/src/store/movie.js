@@ -5,7 +5,7 @@ export default {
 	namespaced: true,
 	state: () => ({
 		movies: [],
-		messeage: '',
+		message: 'Search for the movie title!',
 		loading: false,
 	}),
 	getters: {},
@@ -21,13 +21,16 @@ export default {
 	},
 	actions: {
 		async searchMovies({ state, commit }, payload) {
+			if(state.loading) return;
+			commit('updateState', {
+				message: '',
+				loading: true,
+			})
 			try {
 				const res = await _fetchMovie({ ...payload, page: 1 });
 				const { Search, totalResults } = res.data;
 				commit('updateState', {
-					movies: _uniqBy(Search, 'imdbID'),
-					messeage: 'Hello world',
-					loading: true,
+					movies: _uniqBy(Search, 'imdbID')
 				});
 
 				const total = parseInt(totalResults, 10);
@@ -48,6 +51,10 @@ export default {
 					movies: [],
 					message,
 				});
+			} finally {
+				commit('updateState', {
+					loading: false
+				})
 			}
 		},
 	},
@@ -66,7 +73,7 @@ const _fetchMovie = payload => {
 				resolve(res);
 			})
 			.catch(err => {
-				reject(err.messeage);
+				reject(err.message);
 			});
 	});
 };
