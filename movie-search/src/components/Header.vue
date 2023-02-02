@@ -14,6 +14,11 @@
           {{ nav.name }}
         </RouterLink>
       </div>
+      <div
+        class="user"
+        :style="{backgroundImage: `url(${image})`}"
+        @click="toAbout">
+      </div>
     </div>
   </header>
 </template>
@@ -44,23 +49,56 @@ export default {
             ]
         }
     },
+    computed: {
+      image(){
+        return this.$store.state.about.image
+      },
+      name(){
+        return this.$store.state.about.name
+      }
+    },
     methods: {
       isMatch(path) {
         if(!path) return false
         return path.test(this.$route.fullPath)
+      },
+      toAbout(){
+        this.$router.push('/about')
       }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~/scss/main';
+
 header {
+    position: relative;
     display: flex;
     align-items: center;
     height: 70px;
     padding: 0 40px;
     .logo {
         margin-right: 40px;
+    }
+    .user {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      padding: 6px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      cursor: pointer;
+      top: 0;
+      bottom: 0;
+      right: 40px;
+      margin: auto;
+      background-size: cover;
+    }
+    @include media-breakpoint-down(sm){
+      .nav {
+        display: none;
+      }
     }
 }    
 </style>
