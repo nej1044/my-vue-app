@@ -10,8 +10,8 @@
 # 개발 모드
 [dev]
   framework = "#custom"
-  command = "yarn dev"
-  targetPort = 3030
-  port = 8888
+  command = "yarn dev:webpack"
+  targetPort = 3000
+  port = 8080
   publish = "dist"
   autoLaunch = false
