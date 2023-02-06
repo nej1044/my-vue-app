@@ -1,5 +1,5 @@
 module.exports = {
-    // 파일 확장자를 지정하지 ㅇ낳은 경우, Jest가 검색할 확장자 목록
+    // 파일 확장자를 지정하지 않은 경우, Jest가 검색할 확장자 목록
     moduleFileExtensions: [
         'js',
         'vue'
@@ -11,14 +11,15 @@ module.exports = {
     },
     // 일치하는 경로에서는 모듈을 가져오지 않습니다.
     modulePathIgnorePatterns: [
-        '<rootDir>/node_modules',
+        '<rootDir>/node_modules/',
         '<rootDir>/dist'
     ],
     // jsdom 환경에 대한 URL 설정
     testURL: 'http://localhost',
     // 정규식과 일치하는 파일의 변환 모듈 지정
     transform: {
-        '^.+\\.vue$': 'vue-jest',
+        '^.+\\.vue$': 'vue3-jest',
         '^.+\\.js$': 'babel-jest'
     }
 }
+
