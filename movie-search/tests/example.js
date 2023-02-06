@@ -1,3 +1,8 @@
-export const double=(num)=>{
-    return num * 2
+
+export const asyncFn=()=>{
+    return new Promise(resolve=> {
+        setTimeout(()=> {
+            resolve('Done!')
+        }, 6000)
+    })
 }

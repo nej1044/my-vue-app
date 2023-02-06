@@ -6,7 +6,9 @@
   "scripts": {
     "dev:webpack": "webpack-dev-server --mode development",
     "dev": "netlify dev",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "lint": "eslint --fix --ext .js,.vue",
+    "test:unit": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
