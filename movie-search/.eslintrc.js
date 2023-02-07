@@ -2,8 +2,12 @@ module.exports = {
     env: {
         browser: true,
         node: true,
-        jest: true
+        jest: true,
+        'cypress/globals': true
     },
+    plugins: [
+        'cypress'
+    ],
     extends: [
         // 'plugin:vue/vue3-essential',
         'plugin:vue/vue3-strongly-recommended',
