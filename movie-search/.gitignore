@@ -2,4 +2,6 @@ node_modules
 dist
 .cache
 .DS_Store
+cypress/videos/
+
 .env
