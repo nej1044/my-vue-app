@@ -1,9 +1,9 @@
 import { shallowMount } from "@vue/test-utils";
-import Search from '~/components/Search';
+import Search from '~/components/Search.vue';
 
 describe('components/Search.vue', () => {
     let wrapper
-    beforeEach(async ()=> {
+    beforeEach(()=> {
         wrapper = shallowMount(Search)
     })
 

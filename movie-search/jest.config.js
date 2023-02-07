@@ -14,13 +14,14 @@ module.exports = {
         '<rootDir>/node_modules/',
         '<rootDir>/dist'
     ],
-    testEnvironment: 'jsdom',
     // jsdom 환경에 대한 URL 설정
     testURL: 'http://localhost',
     // 정규식과 일치하는 파일의 변환 모듈 지정
     transform: {
         '^.+\\.vue$': 'vue3-jest',
         '^.+\\.js$': 'babel-jest'
-    }
+    },
+    transformIgnorePatterns: [`/node_modules/(?!axios)`],
+    testEnvironment: 'jsdom'
 }
 

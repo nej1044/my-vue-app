@@ -4,10 +4,12 @@ import router from '~/routes';
 import store from '~/store';
 import loadImage from '~/plugins/loadImage'
 
-describe('routes/Movie.vue', async () => {
-    window.scrollTo = jest.fn()
-    router.push('/movie/tt1234567')
-    await router.isReady()
+describe('routes/Movie.vue', () => {
+    it('async routing wait', async()=> {
+        window.scrollTo = jest.fn()
+        router.push('/movie/tt1234567')
+        await router.isReady()
+    })
     let wrapper
     beforeEach(async ()=> {
         wrapper = shallowMount(Movie, {
