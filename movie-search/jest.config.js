@@ -12,7 +12,8 @@ module.exports = {
     // 일치하는 경로에서는 모듈을 가져오지 않습니다.
     modulePathIgnorePatterns: [
         '<rootDir>/node_modules/',
-        '<rootDir>/dist'
+        '<rootDir>/dist',
+        '<rootDif>/cypress'
     ],
     // jsdom 환경에 대한 URL 설정
     testURL: 'http://localhost',
