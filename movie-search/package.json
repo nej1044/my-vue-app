@@ -56,9 +56,11 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@vue/cli-plugin-pwa": "5.0.8",
     "axios": "1.2.5",
     "bootstrap": "5.3.0-alpha1",
     "lodash": "4.17.21",
+    "register-service-worker": "1.7.2",
     "vue": "3.2.36",
     "vue-router": "4",
     "vuex": "4.0.2"

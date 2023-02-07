@@ -1,7 +1,7 @@
 # Vue3 Movie app
 
 Vue3와 OMDb API를 사용하는 영화 검색 애플리케이션입니다.<br>
-[DEMO](https://starlit-faun-356e90.netlify.app)
+[DEMO](https://omdbapi.me/)
 
 ## 📖 Docs
 

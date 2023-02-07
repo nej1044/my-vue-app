@@ -10,8 +10,9 @@
 .logo {
     font-family: "Oswald", sans-serif;
     font-size: 20px;
-    color: $black;
+    color: $white;
     text-decoration: none;
+    background-color: $black;
     &:hover {
         color: $black;
     }
